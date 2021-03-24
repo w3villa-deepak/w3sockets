@@ -16,5 +16,8 @@
   },
   "homepage": "https://github.com/w3villa-deepak/w3sockets#readme",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }
