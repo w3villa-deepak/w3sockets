@@ -7,5 +7,14 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w3villa-deepak/w3sockets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/w3villa-deepak/w3sockets/issues"
+  },
+  "homepage": "https://github.com/w3villa-deepak/w3sockets#readme",
+  "keywords": [],
   "description": ""
 }
