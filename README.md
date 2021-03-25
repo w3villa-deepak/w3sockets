@@ -14,7 +14,6 @@ let w3sockets = require('w3sockets');
 
 ```sh
 w3sockets.initialize({
-	channel: 'channel_name',
 	grant_type: 'client_credentials',
 	public_key: 'your_public_key',
 	secret_key: 'your_screte_key'
@@ -23,10 +22,10 @@ w3sockets.initialize({
 # For push socket notification
 
 ```sh
-w3sockets.push('event_name', 'your_message_here')
+w3sockets.push('channel', 'event_name', 'your_message_here')
 ```
 # For push notification to firebase
 
 ```sh
-w3sockets.pushFirebaseNotification('event_name', 'your_message_here')
+w3sockets.pushFirebaseNotification('channel', 'message_title', 'message_body')
 ```

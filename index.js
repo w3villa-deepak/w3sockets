@@ -1,23 +1,20 @@
 var request = require('request');
 var fs = require('fs');
-const path = require('path')
+const path = require('path');
 const accessTokenFile = path.join(__dirname, 'access-token.text');
 
-let channel = '';
 let grant_type = '';
 let public_key = '';
 let secret_key = '';
 
 
 exports.initialize = async function (data) {
-    console.log(data)
-    channel = data.channel;
     grant_type = data.grant_type;
     public_key = data.public_key;
     secret_key = data.secret_key;
 }
 
-exports.push = async function (event, message) {
+exports.push = async function (channel, event, message) {
     const ref = this;
 
     return await new Promise(async (resolve, reject) => {
@@ -101,7 +98,7 @@ exports.getAccessToken = async function () {
     })
 };
 
-exports.pushFirebaseNotification = async function (event, message) {
+exports.pushFirebaseNotification = async function (channel, message_title, message_body) {
     const ref = this;
 
     return await new Promise(async (resolve, reject) => {
@@ -110,8 +107,8 @@ exports.pushFirebaseNotification = async function (event, message) {
                 channel: `https://www.w3sockets.com/-${channel}`,
                 receiver_id: message.body.receiver,
                 message: {
-                    body: message.body.texts,
-                    name: message.body.name
+                    name: message_title,
+                    body: message_body
                 }
             };
 
